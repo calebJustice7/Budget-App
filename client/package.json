@@ -1,0 +1,37 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.6",
+    "apexcharts": "^3.32.0",
+    "axios": "^0.24.0",
+    "core-js": "^3.6.5",
+    "jquery": "^3.6.0",
+    "js-cookie": "^3.0.1",
+    "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.2",
+    "vue-plaid-link": "^0.6.1",
+    "vue-router": "^3.2.0",
+    "vue-select": "^3.16.0",
+    "vue-toastr": "^2.1.2",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

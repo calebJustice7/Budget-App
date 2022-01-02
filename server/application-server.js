@@ -36,7 +36,7 @@ class ApplicationServer {
 
     async StartServer() {
         try {
-            await this._establishMongoConnection();
+            // await this._establishMongoConnection();
             app.locals.dbConnection = this.dbConnection;
             app.locals.configuration = this.configuration;
             app.use(cors({origin: "*",optionsSuccessStatus: 200,methods: ["GET", "PUT", "POST", "OPTIONS", "DELETE"],credentials: true,allowedHeaders: ["Content-Type", "Authorization"]}));
@@ -48,6 +48,9 @@ class ApplicationServer {
 
             app.use(new CheckToken());
 
+            app.get('/api/healthcheck', (req, res) => {
+                res.status(200).send("OK");
+            })
             app.use('/api/auth', require('./routes/auth/auth'));
             app.use('/api/auth/refresh_token', require("./routes/auth/refresh-token"));
             app.use('/api/plaid_token', require("./routes/plaid/plaid-token"));

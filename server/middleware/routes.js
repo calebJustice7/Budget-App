@@ -35,6 +35,10 @@ module.exports = {
         {
             path: '/api/records/account',
             authenticationRequired: true
+        },
+        {
+            path: '/api/healthcheck',
+            authenticationRequired: false
         }
     ]
 }

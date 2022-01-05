@@ -44,8 +44,6 @@ class ApplicationServer {
             app.use(BodyParser.urlencoded({ extended: true, limit: '20mb' }));
             app.use(BodyParser.json({ limit: '20mb' }));
 
-            app.use(express.static(path.join(__dirname, "../client/", "/dist/")));
-
             app.use(new CheckToken());
 
             app.get('/api/healthcheck', (req, res) => {
@@ -56,6 +54,8 @@ class ApplicationServer {
             app.use('/api/plaid_token', require("./routes/plaid/plaid-token"));
             app.use('/api/records', require("./routes/plaid/records"));
             app.use('/api/user_profile', require("./routes/user/user-profile"));
+
+            app.use(express.static(path.join(__dirname, "../client/", "dist/")));
 
             app.listen(this.configuration.portNumber, () => {
                 console.log("Application Server started on port " + this.configuration.portNumber);
